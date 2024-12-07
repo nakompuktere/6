@@ -8,8 +8,10 @@ from download_comic_images import get_comic_image
 
 
 def send_files(delay, chat_id, bot):
+    first_comic_id = 1
+    last_comic_id = 614
     while True:
-        random_number = random.randint(1, 614)
+        random_number = random.randint(first_comic_id, last_comic_id)
         get_comic_image(random_number)
 
         with open("images/comic.png", 'rb') as file:
