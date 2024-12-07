@@ -1,8 +1,8 @@
 import os
 import telegram
 import time
-import argparse
 from dotenv import load_dotenv
+from pathlib import Path
 import random
 from download_comic_images import get_comic_image
 
@@ -18,6 +18,7 @@ def send_files(chat_id, bot):
 
 
 def main():
+    Path("images").mkdir(parents=True, exist_ok=True)
     load_dotenv()
     bot = telegram.Bot(token=os.getenv("TELEGRAM_TOKEN"))
     default_chat_id = os.getenv("TG_CHAT_ID")

@@ -1,5 +1,4 @@
 import requests
-from pathlib import Path
 from urllib.parse import urlparse
 import os
 import telegram
@@ -23,7 +22,6 @@ def get_comic_image(random_number):
     
 
 def download_image(file_path, image_url):
-    Path("images").mkdir(parents=True, exist_ok=True)
     response = requests.get(image_url)
     response.raise_for_status()
     
