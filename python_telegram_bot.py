@@ -18,6 +18,7 @@ def send_files(delay, chat_id, bot):
             bot.send_document(chat_id=chat_id, document=file)
         time.sleep(delay)
 
+
 def main():
     load_dotenv()
     bot = telegram.Bot(token=os.getenv("TELEGRAM_TOKEN"))
@@ -30,6 +31,7 @@ def main():
         send_files(args.delay, args.chat_id, bot)
     finally:
         os.remove("images/comic.png")
+
 
 if __name__ == "__main__":
     main()

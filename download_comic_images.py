@@ -8,6 +8,7 @@ import argparse
 from dotenv import load_dotenv
 import random
 
+
 def get_comic_image(random_number):
     url = f'https://xkcd.com/{random_number}/info.0.json'
     response = requests.get(url)
@@ -27,4 +28,4 @@ def download_image(file_path, image_url):
     response.raise_for_status()
     
     with open(file_path, 'wb') as file:
-      file.write(response.content)
+        file.write(response.content)
