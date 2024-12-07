@@ -15,8 +15,9 @@ def get_comic_image(random_number):
     response.raise_for_status()
 
     file_path = "images/comic.png"
-    image_url = response.json()["img"]
-    comment = response.json()["alt"]
+    comic_archive = response.json()
+    image_url = comic_archive["img"]
+    comment = comic_archive["alt"]
     download_image(file_path, image_url)
     
 
