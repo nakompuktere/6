@@ -21,8 +21,8 @@ def main():
     image_path = os.path.join("images", "comic.png")
     Path("images").mkdir(parents=True, exist_ok=True)
     load_dotenv()
-    bot = telegram.Bot(token=os.getenv("TELEGRAM_TOKEN"))
-    default_chat_id = os.getenv("TG_CHAT_ID")
+    bot = telegram.Bot(token=os.environ["TELEGRAM_TOKEN"])
+    default_chat_id = os.environ["TG_CHAT_ID"]
     try:
         send_files(default_chat_id, bot, image_path)
     finally:
