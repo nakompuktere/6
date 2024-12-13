@@ -12,7 +12,6 @@ def send_file(chat_id, bot, image_path):
         bot.send_document(chat_id=chat_id, document=file)
 
 
-
 def main():
     Path("images").mkdir(parents=True, exist_ok=True)
     load_dotenv()

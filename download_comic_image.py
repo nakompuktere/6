@@ -18,7 +18,7 @@ def download_comic_image(random_number):
     comic_archive = response.json()
     image_url = comic_archive["img"]
     download_image(file_path, image_url)
-    
+
 
 def download_image(file_path, image_url):
     response = requests.get(image_url)
