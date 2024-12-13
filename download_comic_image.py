@@ -17,7 +17,6 @@ def download_comic_image(random_number):
     file_path = os.path.join("images", "comic.png")
     comic_archive = response.json()
     image_url = comic_archive["img"]
-    comment = comic_archive["alt"]
     download_image(file_path, image_url)
     
 
